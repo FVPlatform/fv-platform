@@ -1,0 +1,80 @@
+async function main2() {
+    try {
+        await database.labelCat.createMany({
+            data: [
+                { name: "FELIZ VIAJE"},
+                { name: "CONTRAVEL"},
+                { name: "GRUPO XCARET"},
+                { name: "GEO TRAVEL"},
+                { name: "LA OPERADORA"},
+                { name: "CLICK OPERADORA TURISTICA"},
+                { name: "IMACOP TOUR CORPORATION"},
+                { name: "SYSTEM OPERADORA DE VIAJES"},
+                { name: "FPV SERVICIOS TURISTICOS"},
+                { name: "RESERVACIONES NACIONALES"},
+                { name: "CHARTER GO"},
+                { name: "TL OPERADORA TURISTICA"},
+                { name: "RESERVARH MAYORISTA"},
+                { name: "RTP TOUR OPERADORA"},
+                { name: "RECORD VACATION"},
+                { name: "NATURLEON"},
+                { name: "QUALITY SERVICE"},
+                { name: "TICKET OPERADORA"},
+                { name: "MAGNI CHARTERS"},
+                { name: "ROOMS2GO"},
+                { name: "SOLATINO"},
+                { name: "BEDSONLINE"},
+                { name: "BOOKING TOUR OPERADOR"},
+                { name: "PROMOSER"},
+                { name: "VIAJOMEXICO"},
+                { name: "OMEXTUR"},
+                { name: "NATURMEX"},
+                { name: "QUALITY MAYORISTA"},
+                { name: "J&J OPERADORA"},
+                { name: "ENTORNO CIT"},
+                { name: "CONELVA OPERADORA"},
+                { name: "XAMAN EK"},
+                { name: "QUETZAL TOUR OPERATOR"},
+                { name: "PROTURS OPERADORA"},
+                { name: "TURISMO TRAVEL"},
+                { name: "MP15"},
+                { name: "CHECK INN VIAJES"},
+                { name: "HOTEL DO"},
+                { name: "CIVITATIS"},
+                { name: "LOMAS TRAVEL"},
+                { name: "TRAVELINN"},
+                { name: "AV360"},
+                { name: "VIAJES & CRUCEROS"},
+                { name: "TURISTICOS KEOPS"},
+                { name: "UNIVERSE TRAVEL MEXICO"},
+                { name: "DREAM DESTINATIONS MEXICO"},
+                { name: "ADONDE"},
+                { name: "EUROMUNDO"},
+                { name: "JULIA TOURS"},
+                { name: "PETRA"},
+                { name: "TRAVEL SHOP"},
+                { name: "VIAJES B2B"},
+                { name: "VIÑALES TOURS"},
+                { name: "ABIEGA OPERADORA"},
+                { name: "IUMIRA TRAVEL"},
+                { name: "VIAJES FAMA"},
+                { name: "MEX-INCA"},
+                { name: "NEFERTARI"},
+                { name: "MEGA TRAVEL"},
+                { name: "AUTO RENTA"},
+                { name: "ASESORES EN CRUCEROS"},
+                { name: "HOSTECH"},
+                { name: "VOLANDO VIAJES"},
+                { name: "AZABACHE"},
+                { name: "HOLIDAYTRAVEL"},
+            ]
+        });
+        console.log("Exito");
+    } catch (error) {
+        console.error("Error llenando la base de datos categorias", error);
+    } finally {
+        await database.$disconnect();
+    }
+}
+
+main2();

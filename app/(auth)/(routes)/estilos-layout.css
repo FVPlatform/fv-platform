@@ -1,0 +1,58 @@
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-bottom: -700px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas */
+    overflow:hidden;
+    position: relative;
+    animation: moveLogos 10s linear infinite; /* Repite la animación de movimiento */
+}
+
+.logo {
+    width: 100%; /* Ajusta el tamaño de los logos según sea necesario */
+    height:auto; /* Ajusta el tamaño de los logos según sea necesario */
+    position: relative;
+}
+
+.logo::after {
+    content: ''; /* Agrega un pseudo-elemento para duplicar el logo */
+    position: absolute; /* Posiciona el pseudo-elemento de forma absoluta */
+    top: 0; /* Coloca el pseudo-elemento en la parte superior */
+    left: 100%; /* Coloca el pseudo-elemento a la derecha del logo */
+    width: 100%; /* Ajusta el ancho del pseudo-elemento */
+    height: 100%; /* Ajusta la altura del pseudo-elemento */
+    background: inherit; /* Utiliza el mismo fondo que el logo */
+}
+
+.logo-grid::before,
+.logo-grid::after {
+    content: ''; /* Agrega pseudo-elementos al contenedor de logos */
+    position: absolute; /* Posiciona los pseudo-elementos de forma absoluta */
+    top: 0; /* Coloca los pseudo-elementos en la parte superior */
+    width: 100%; /* Ajusta el ancho de los pseudo-elementos */
+    height: 100%; /* Ajusta la altura de los pseudo-elementos */
+    background: inherit; /* Utiliza el mismo fondo que el contenedor */
+    z-index: -1; /* Envía los pseudo-elementos detrás de los logos */
+}
+
+.logo-grid::before {
+    left: -100%; /* Coloca el pseudo-elemento antes de los logos */
+}
+
+.logo-grid::after {
+    left: 100%; /* Coloca el pseudo-elemento después de los logos */
+}
+
+@keyframes moveLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
