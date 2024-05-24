@@ -50,7 +50,7 @@ export const CourseCard = ({
                     <CourseProgress
                         variant={progress === 100 ? "success" : "default"}
                         size="sm"
-                        value={progress}
+                        value={progress ?? 0}
                     />
                 </div>
             </div>
