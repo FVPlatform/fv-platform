@@ -12,10 +12,18 @@ import { isAdmin } from "@/lib/admin";
 export const NavbarRoutes = () => {
   const { userId } = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
 
   const isAdminPage = pathname?.startsWith("/admin");
   const isCoursePage = pathname?.includes("/courses");
   const isSearchPage = pathname === "/buscar";
+
+  const handleLogout = () => {
+    router.push('/');
+    setTimeout(() => {
+      window.location.reload();
+    }, 50);
+  };
 
   return (
     <>
@@ -27,7 +35,7 @@ export const NavbarRoutes = () => {
       <div className="flex gap-x-2 ml-auto">
         {isAdminPage || isCoursePage ? (
           <Link href="/">
-            <Button size="sm" variant="secondary">
+            <Button size="sm" variant="secondary" onClick={handleLogout}>
               <LogOut className="h-4 w-4 mr-2" />
               Salir
             </Button>
