@@ -19,6 +19,7 @@ import {
     FcRating,
     FcNightLandscape,
     FcEnteringHeavenAlive,
+    FcDocument,
 } from "react-icons/fc";
 
 import {IconType} from "react-icons";
@@ -45,7 +46,8 @@ const iconMap: Record<Category["name"], IconType> = {
     "Eventos": FcConferenceCall,
     "Disney": FcRating,
     "Tours internacionales": FcGlobe,
-    "Autos": FcAutomotive 
+    "Autos": FcAutomotive,
+    "Manuales": FcDocument
 }
 
 export const Categories = ({
